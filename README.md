@@ -21,7 +21,7 @@ ACADEMIX is a desktop application for managing student records, built with C++17
 ## Technologies Used
 
 - C++17
-- Qt 6 Widgets (graphical user interface)
+- Qt 6.12 Widgets (graphical user interface)
 - CMake (build system)
 - CSV text file (storage)
 
@@ -39,7 +39,7 @@ ACADEMIX is a desktop application for managing student records, built with C++17
 ## Requirements
 
 - Windows 10 or later (Developed and tested on Windows 10)
-- Qt 6 (MinGW build)
+- Qt 6.12 (MinGW build)
 - MinGW GCC 13.1.0
 - CMake 3.21 or newer
 - Ninja
