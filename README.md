@@ -8,7 +8,7 @@ ACADEMIX is a desktop application for managing student records, built with C++17
 
 ## Features
 
-- Add, Update, Delete, Previous, Next and Clear Form operations
+- Add, Update, Delete, Previous, Next and New Record operations
 - Six fields per student: Student Name, Roll Number, Father's Name, Caste, District and GPA
 - All fields are required
 - GPA validation (0.00 to 4.00, numbers only)
@@ -38,7 +38,7 @@ ACADEMIX is a desktop application for managing student records, built with C++17
 
 ## Requirements
 
-- Windows 10
+- Windows 10 or later (Developed and tested on Windows 10)
 - Qt 6 (MinGW build)
 - MinGW GCC 13.1.0
 - CMake 3.21 or newer
@@ -70,7 +70,7 @@ Alternatively, run `windeployqt build\Academix.exe` once to copy the required Qt
 2. **Browse records:** use **Previous** and **Next**. The label shows the position, for example "Record 3 of 10".
 3. **Update a record:** show the record, change the fields and click **Update**. The Roll Number can be changed only to one that is not already used.
 4. **Delete a record:** show the record and click **Delete**, then confirm.
-5. **Clear Form:** empties the form and returns to new-record mode.
+5. **New Record:** empties the form and returns to new-record mode.
 
 ## Data Storage
 
@@ -95,7 +95,9 @@ Text containing commas or quotation marks is wrapped in quotes so the file is ne
 **Adil Raza**
 
 BE Software Engineering, 1st Semester
+
 Course: Programming Fundamentals
+
 Mehran University of Engineering and Technology
 
 *This project was developed as Semester Project.*
