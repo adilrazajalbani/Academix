@@ -276,21 +276,25 @@ bool MainWindow::readStudentFromForm(Student &student)
         return false;
     }
 
-    // 2. GPA must look like a number (digits with an optional decimal part)
-    QRegularExpression numberPattern("^[0-9]+(\\.[0-9]+)?$");
+    
+    // 2. GPA must be a valid number with a maximum of two decimal places
+    QRegularExpression numberPattern("^[0-9]+(\\.[0-9]{1,2})?$");
     if (!numberPattern.match(gpaText).hasMatch()) {
-        showMessage(MessageType::Warning, "Invalid GPA",
-            "GPA must be a number such as 3.50.\nLetters and symbols are not allowed.");
-        return false;
+    showMessage(MessageType::Warning, "Invalid GPA",
+        "GPA must be a number with a maximum of two decimal places (e.g., 3.50).");
+    return false;
     }
 
     // 3. GPA must be between 0.00 and 4.00
-    double gpa = gpaText.toDouble();
-    if (gpa < 0.0 || gpa > 4.0) {
-        showMessage(MessageType::Warning, "GPA Out of Range",
-            "GPA must be between 0.00 and 4.00.");
-        return false;
-    }
+    bool ok = false;
+    double gpa = gpaText.toDouble(&ok);
+
+    if (!ok || gpa < 0.0 || gpa > 4.0) {
+    showMessage(MessageType::Warning, "GPA Out of Range",
+        "GPA must be between 0.00 and 4.00.");
+    return false;
+}
+
 
     student = Student(name, roll, father, caste, district, gpa);
     return true;
